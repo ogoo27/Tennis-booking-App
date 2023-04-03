@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Admin Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Welcome to the admin home page.</p>
+</div>
+
+<div class="text-center">
+    <p><a class="text-dark" asp-area="Admin" asp-controller="Courts" asp-action="WeeklyBookings">Manage Upcoming Bookings</a></p>
+    <p><a class="text-dark" asp-area="Admin" asp-controller="Courts" asp-action="UpcomingMaintenance">View Upcoming Maintenance</a></p>
+    <p><a class="text-dark" asp-area="Admin" asp-controller="Staff" asp-action="AddStaffMember">Add Staff Member</a></p>
+</div>
