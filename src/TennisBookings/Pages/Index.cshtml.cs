@@ -35,6 +35,10 @@ public class IndexModel : PageModel
 
 	public async Task OnGet()
 	{
+		if (_configuration.GetValue<bool>("Features:HomePage:EnableGreeting"))
+		{
+			Greeting = _greetingService.GetRandomGreeting();
+		}
 		
 	}
 }
