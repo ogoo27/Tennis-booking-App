@@ -41,7 +41,7 @@ builder.Services
 	.AddMembershipServices()
 	.AddStaffServices()
 	.AddCourtServices()
-	.AddWeatherForecasting()
+	.AddWeatherForecasting(builder.Configuration)
 	.AddProducts()
 	.AddNotifications()
 	.AddGreetings()
