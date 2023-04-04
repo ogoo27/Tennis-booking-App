@@ -32,6 +32,7 @@ using var connection = new SqliteConnection(builder.Configuration
 
 await connection.OpenAsync();
 
+//Registration of services
 builder.Services
 	.AddAppConfiguration(builder.Configuration)
 	.AddBookingServices()
@@ -62,6 +63,7 @@ builder.Services.AddRazorPages(options =>
 builder.Services.AddDbContext<TennisBookingsDbContext>(options => options.UseSqlite(connection));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+//Microsoft Identity services uses the DbContext to access the user data
 builder.Services.AddIdentity<TennisBookingsUser, TennisBookingsRole>(options => options.SignIn.RequireConfirmedAccount = false)
 	.AddEntityFrameworkStores<TennisBookingsDbContext>()
 	.AddDefaultUI()
